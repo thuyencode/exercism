@@ -61,7 +61,7 @@ export function limesToCut(wedgesNeeded, limes) {
         break
     }
 
-    if (limesCutNum >= wedgesNeeded) return count
+    if (limesCutNum >= wedgesNeeded) break
   }
 
   return count
