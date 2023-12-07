@@ -11,7 +11,13 @@
  * @returns {number} total bird count
  */
 export function totalBirdCount(birdsPerDay) {
-  return birdsPerDay.reduce((n, bird) => n + bird, 0)
+  let sum = 0
+
+  for (const bird of birdsPerDay) {
+    sum += bird
+  }
+
+  return sum
 }
 
 /**
