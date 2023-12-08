@@ -1,4 +1,4 @@
 declare type Quantities = {
-  noodles: number;
-  sauce: number;
-};
+  noodles: number
+  sauce: number
+}
