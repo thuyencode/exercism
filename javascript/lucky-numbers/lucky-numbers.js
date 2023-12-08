@@ -8,20 +8,7 @@
  * @returns {number} sum of the two arrays
  */
 export function twoSum(array1, array2) {
-  /**
-   * Convert an array to a number
-   * @param {number[]} array
-   * @returns {number}
-   */
-  function arrayToNumber(array) {
-    let str = ''
-
-    array.forEach((num) => (str += String(num)))
-
-    return Number(str)
-  }
-
-  return arrayToNumber(array1) + arrayToNumber(array2)
+  return Number(array1.join('')) + Number(array2.join(''))
 }
 
 /**
@@ -42,13 +29,8 @@ export function luckyNumber(value) {
  * @returns {string} error message
  */
 export function errorMessage(input) {
-  if (!input || input.length === 0) {
+  if (!input) {
     return 'Required field'
   }
-
-  if (Number.isNaN(Number(input)) || input === '0') {
-    return 'Must be a number besides 0'
-  }
-
-  return ''
+  return Number(input) ? '' : 'Must be a number besides 0'
 }
