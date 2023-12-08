@@ -37,8 +37,8 @@ export function cookingStatus(times) {
  * @param {number} minutes The average preparation time per layer in minutes
  * @returns {number} The total preparation time
  */
-export function preparationTime(layers, minutes) {
-  return layers.length * (minutes ?? 2)
+export function preparationTime(layers, minutes = 2) {
+  return layers.length * minutes
 }
 
 /**
