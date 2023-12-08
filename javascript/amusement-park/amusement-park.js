@@ -33,7 +33,9 @@ export function revokeTicket(visitor) {
  * @returns {string} ticket status
  */
 export function ticketStatus(tickets, ticketId) {
-  switch (tickets[ticketId]) {
+  const visitorName = tickets[ticketId]
+
+  switch (visitorName) {
     case undefined:
       return 'unknown ticket id'
 
@@ -41,7 +43,7 @@ export function ticketStatus(tickets, ticketId) {
       return 'not sold'
 
     default:
-      return `sold to ${tickets[ticketId]}`
+      return `sold to ${visitorName}`
   }
 }
 
@@ -54,14 +56,7 @@ export function ticketStatus(tickets, ticketId) {
  * @returns {string} ticket status
  */
 export function simpleTicketStatus(tickets, ticketId) {
-  switch (tickets[ticketId]) {
-    case undefined:
-    case null:
-      return 'invalid ticket !!!'
-
-    default:
-      return `${tickets[ticketId]}`
-  }
+  return tickets[ticketId] ?? 'invalid ticket !!!'
 }
 
 /**
