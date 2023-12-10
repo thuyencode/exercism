@@ -26,11 +26,7 @@ export function cardTypeCheck(stack, card) {
 export function determineOddEvenCards(stack, type) {
   let count = 0
 
-  if (type) {
-    stack.forEach((item) => (count += Number(item % 2 === 0)))
-  } else {
-    stack.forEach((item) => (count += Number(item % 2 !== 0)))
-  }
+  stack.forEach((item) => (count += Number(item % 2 === Number(!type))))
 
   return count
 }
