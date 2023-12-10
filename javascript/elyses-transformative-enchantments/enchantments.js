@@ -53,13 +53,10 @@ export function middleTwo(deck) {
  */
 
 export function sandwichTrick(deck) {
-  const top = deck.shift()
-  const bottom = deck.pop()
-
   const middleIndex = Math.floor(deck.length / 2)
 
   // @ts-ignore
-  deck.splice(middleIndex, 0, bottom, top)
+  deck.splice(middleIndex, 0, deck.shift(), deck.pop())
 
   return deck
 }
