@@ -30,7 +30,9 @@ export function checkHumidityLevel(humidityPercentage) {
 export function reportOverheating(temperature) {
   if (temperature === null) {
     throw new ArgumentError()
-  } else if (temperature > 500) {
+  }
+
+  if (temperature > 500) {
     throw new OverheatingError(temperature)
   }
 }
