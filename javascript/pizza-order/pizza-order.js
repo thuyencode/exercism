@@ -2,6 +2,17 @@
 //
 // @ts-check
 
+const PIZZA_PRICE = {
+  Margherita: 7,
+  Caprese: 9,
+  Formaggio: 10
+}
+
+const EXTRA_OPTIONS_PRICE = {
+  ExtraSauce: 1,
+  ExtraToppings: 2
+}
+
 /**
  * Determine the prize of the pizza given the pizza and optional extras
  *
@@ -11,23 +22,11 @@
  * @returns {number} the price of the pizza
  */
 export function pizzaPrice(pizza, ...extras) {
-  switch (extras.shift()) {
-    case 'ExtraSauce':
-      return pizzaPrice(pizza, ...extras) + 1
-    case 'ExtraToppings':
-      return pizzaPrice(pizza, ...extras) + 2
+  if (extras.length > 0) {
+    return EXTRA_OPTIONS_PRICE[extras.shift()] + pizzaPrice(pizza, ...extras)
   }
 
-  switch (pizza) {
-    case 'Margherita':
-      return 7
-
-    case 'Caprese':
-      return 9
-
-    case 'Formaggio':
-      return 10
-  }
+  return PIZZA_PRICE[pizza]
 }
 
 /**
@@ -37,11 +36,9 @@ export function pizzaPrice(pizza, ...extras) {
  * @returns {number} the price of the total order
  */
 export function orderPrice(pizzaOrders) {
-  return pizzaOrders.reduce((accumulator, pizzaOrder) => {
-    accumulator += pizzaPrice(pizzaOrder.pizza, ...pizzaOrder.extras)
-
-    return accumulator
-  }, 0)
+  return pizzaOrders.reduce(
+    (sum, pizzaOrder) =>
+      sum + pizzaPrice(pizzaOrder.pizza, ...pizzaOrder.extras),
+    0
+  )
 }
-
-pizzaPrice('Margherita')
