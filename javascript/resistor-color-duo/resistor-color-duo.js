@@ -3,6 +3,25 @@
 // convenience to get you started writing code faster.
 //
 
-export const decodedValue = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+/**
+ * Resistor Color Duo
+ *
+ * @param {string[]} colors
+ * @returns {number}
+ */
+export const decodedValue = (colors) => {
+  return Number(`${COLORS.indexOf(colors[0])}${COLORS.indexOf(colors[1])}`)
+}
+
+export const COLORS = [
+  'black',
+  'brown',
+  'red',
+  'orange',
+  'yellow',
+  'green',
+  'blue',
+  'violet',
+  'grey',
+  'white'
+]
