@@ -7,6 +7,7 @@
  * Calculate the date and time one gigasecond after a certain date.
  *
  * @param {Date} date
+ * @returns {Date}
  */
 export const gigasecond = (date) => {
   // One giga-milliseconds
