@@ -3,6 +3,11 @@
 // convenience to get you started writing code faster.
 //
 
-export const twoFer = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+/**
+ * Determine what you will say as you give away the extra cookie.
+ *
+ * @param {string} name
+ */
+export const twoFer = (name) => {
+  return `One for ${name || 'you'}, one for me.`
+}
