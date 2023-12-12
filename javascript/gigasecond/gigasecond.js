@@ -3,6 +3,14 @@
 // convenience to get you started writing code faster.
 //
 
-export const gigasecond = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+/**
+ * Calculate the date and time one gigasecond after a certain date.
+ *
+ * @param {Date} date
+ */
+export const gigasecond = (date) => {
+  // One giga-milliseconds
+  const gigaMs = Math.pow(10, 9) * 1000
+
+  return new Date(date.getTime() + gigaMs)
+}
