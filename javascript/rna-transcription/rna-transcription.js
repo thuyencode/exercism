@@ -3,6 +3,22 @@
 // convenience to get you started writing code faster.
 //
 
-export const toRna = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+/**
+ *
+ * @param {string} dna
+ */
+export const toRna = (dna) => {
+  if (!dna) return ''
+
+  return dna
+    .split('')
+    .map((nucleotide) => DNA_TO_RNA[nucleotide])
+    .join('')
+}
+
+const DNA_TO_RNA = {
+  G: 'C',
+  C: 'G',
+  T: 'A',
+  A: 'U'
+}
