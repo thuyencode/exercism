@@ -10,6 +10,9 @@
  * @returns {boolean}
  */
 export const isPangram = (sentence) => {
-  // Use regex to replace all the non English alphabet characters from string
-  return new Set(sentence.replace(/[^a-zA-Z]/g, '').toLowerCase()).size === 26
+  const sentenceLowered = sentence.toLowerCase()
+
+  return [...'abcdefghijklmnopqrstuvwxyz'].every((char) =>
+    sentenceLowered.includes(char)
+  )
 }
