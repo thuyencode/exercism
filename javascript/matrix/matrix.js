@@ -4,15 +4,28 @@
 //
 
 export class Matrix {
-  constructor() {
-    throw new Error('Remove this statement and implement this function');
+  #rows = []
+  #columns = []
+
+  /**
+   * @constructor
+   * @param {string} matrixStr A string representing a matrix of numbers
+   */
+  constructor(matrixStr) {
+    this.#rows = matrixStr
+      .split('\n')
+      .map((row) => row.split(' ').map((item) => Number(item)))
+
+    this.#columns = this.#rows[0].map((_, index) =>
+      this.#rows.map((row) => row[index])
+    )
   }
 
   get rows() {
-    throw new Error('Remove this statement and implement this function');
+    return this.#rows
   }
 
   get columns() {
-    throw new Error('Remove this statement and implement this function');
+    return this.#columns
   }
 }
