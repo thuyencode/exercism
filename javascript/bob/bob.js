@@ -12,6 +12,10 @@
 export const hey = (message) => {
   const trimmedMessage = message.trim()
 
+  if (trimmedMessage.length === 0) {
+    return 'Fine. Be that way!'
+  }
+
   if (isAllCapital(trimmedMessage) && trimmedMessage.endsWith('?')) {
     return "Calm down, I know what I'm doing!"
   }
@@ -22,10 +26,6 @@ export const hey = (message) => {
 
   if (trimmedMessage.endsWith('?')) {
     return 'Sure.'
-  }
-
-  if (isSilence(trimmedMessage)) {
-    return 'Fine. Be that way!'
   }
 
   return 'Whatever.'
@@ -43,16 +43,4 @@ function isAllCapital(message) {
   if (str.length === 0) return false
 
   return [...'abcdefghijklmnopqrstuvwxyz'].every((char) => !str.includes(char))
-}
-
-/**
- * Check if `message` is silence or not
- *
- * @param {string} message
- * @returns {boolean}
- */
-function isSilence(message) {
-  if (message.length === 0) return true
-
-  return /^[\s\\]*$/.test(message.trim())
 }
