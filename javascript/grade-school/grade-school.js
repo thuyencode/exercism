@@ -28,12 +28,12 @@ export class GradeSchool {
       this.#db[oldGrade].splice(this.#db[oldGrade].indexOf(student), 1)
     }
 
-    if (this.#db[grade] === undefined) {
-      this.#db[grade] = Array.of(student)
-    } else {
-      this.#db[grade].push(student)
-      this.#db[grade] = [...new Set(this.#db[grade])]
+    const temp = this.#db[grade]
 
+    if (temp === undefined) {
+      this.#db[grade] = Array.of(student)
+    } else if (temp.indexOf(student) === -1) {
+      temp.push(student)
       this.#sortGrade(grade)
     }
   }
@@ -92,3 +92,5 @@ export class GradeSchool {
     }
   }
 }
+
+const school = new GradeSchool()
