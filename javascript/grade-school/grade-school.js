@@ -92,5 +92,3 @@ export class GradeSchool {
     }
   }
 }
-
-const school = new GradeSchool()
