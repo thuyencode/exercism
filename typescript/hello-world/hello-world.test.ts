@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'bun:test'
 import { hello } from './hello-world'
 
 describe('Hello World', () => {
