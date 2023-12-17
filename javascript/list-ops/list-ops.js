@@ -4,7 +4,7 @@
 //
 
 export class List {
-  #list = []
+  #list
 
   /**
    * @constructor
@@ -140,6 +140,6 @@ export class List {
   }
 
   get values() {
-    return this.#list
+    return [...this.#list]
   }
 }
