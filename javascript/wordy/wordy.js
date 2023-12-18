@@ -11,12 +11,14 @@ const OPS = {
 
 /**
  * @param {string} word
+ * @param {number} i
  */
 const notNumber = (word) => isNaN(Number(word)),
   notOp = (word) => '+-*/'.indexOf(word) === -1,
-  odd = (_, i) => i % 2
+  oddIndex = (_, i) => i % 2
 
 /**
+ * Parse and evaluate simple math word problems returning the answer as an integer.
  *
  * @param {string} question
  * @returns {number}
@@ -31,7 +33,7 @@ export function answer(question) {
   switch (true) {
     case words.filter(notNumber).some(notOp):
       throw Error('Unknown operation')
-    case words.length % 2 === 0 || !words.filter(odd).every(notNumber):
+    case words.length % 2 === 0 || !words.filter(oddIndex).every(notNumber):
       throw Error('Syntax error')
   }
 
@@ -42,6 +44,12 @@ export function answer(question) {
   return Number(words[0])
 }
 
+/**
+ * @param {string | number} a
+ * @param {string} op
+ * @param {string | number} b
+ * @returns {number}
+ */
 function calculate(a, op, b) {
   return eval(`${a} ${op} ${b}`)
 }
