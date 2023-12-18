@@ -1,21 +1,23 @@
+// @ts-nocheck
+
 import { colorCode, COLORS } from './resistor-color'
 
 describe('color code', () => {
-  it('Black', () => {
+  test('Black', () => {
     expect(colorCode('black')).toEqual(0)
   })
 
-  xit('White', () => {
+  test('White', () => {
     expect(colorCode('white')).toEqual(9)
   })
 
-  xit('Orange', () => {
+  test('Orange', () => {
     expect(colorCode('orange')).toEqual(3)
   })
 })
 
 describe('Colors', () => {
-  xit('returns all colors', () => {
+  test('returns all colors', () => {
     expect(COLORS).toEqual([
       'black',
       'brown',
@@ -26,7 +28,7 @@ describe('Colors', () => {
       'blue',
       'violet',
       'grey',
-      'white',
+      'white'
     ])
   })
 })
