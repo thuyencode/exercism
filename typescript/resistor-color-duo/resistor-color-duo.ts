@@ -1,4 +1,4 @@
-export function decodedValue([r1, r2]: [r1: Color, r2: Color]) {
+export function decodedValue([r1, r2]: Color[]) {
   return COLORS.indexOf(r1) * 10 + COLORS.indexOf(r2)
 }
 
