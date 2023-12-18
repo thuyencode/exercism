@@ -9,8 +9,8 @@
  * @param {string[]} colors
  * @returns {number}
  */
-export const decodedValue = (colors) => {
-  return Number(`${COLORS.indexOf(colors[0])}${COLORS.indexOf(colors[1])}`)
+export const decodedValue = ([r1, r2]) => {
+  return COLORS.indexOf(r1) * 10 + COLORS.indexOf(r2)
 }
 
 export const COLORS = [
