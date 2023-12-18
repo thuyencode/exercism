@@ -45,7 +45,7 @@ const ACTION_AT = [
  * @returns {string[]} An array of strings that represents the binary form of `decimal`
  */
 function dec2bin(decimal) {
-  const bin = (decimal >>> 0).toString(2).split('')
+  const bin = decimal.toString(2).split('')
 
   bin.unshift(...Array.from({ length: 5 - bin.length }).fill('0'))
 
