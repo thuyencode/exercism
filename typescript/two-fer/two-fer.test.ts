@@ -1,4 +1,5 @@
-import { describe, expect, test } from 'bun:test'
+// @ts-nocheck
+
 import { twoFer } from './two-fer'
 
 describe('TwoFer', () => {

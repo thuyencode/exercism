@@ -21,8 +21,7 @@
     // files in the TypeScript project.
     //
     // https://babeljs.io/docs/en/babel-plugin-transform-typescript/#caveats
-    "isolatedModules": true,
-    "types": ["bun-types"]
+    "isolatedModules": true
   },
   "include": ["*.ts", "*.tsx", ".meta/*.ts", ".meta/*.tsx"],
   "exclude": ["node_modules"]
