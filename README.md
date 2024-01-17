@@ -41,3 +41,24 @@ At last, install `pytest` package:
 ```bash
 pip install pytest
 ```
+
+## How to run unit tests for Clojure exercises
+
+You need to install [Leiningen](https://leiningen.org) first. On Arch-based Linux distros:
+
+```bash
+sudo pacman -S extra/leiningen
+```
+
+Then run the test inside the exercise folders. Example:
+
+```fish
+~/exercism (main) cd clojure/hello-world/
+~/e/c/hello-world (main) lein test
+
+lein test hello-world-test
+
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.
+~/e/c/hello-world (main)  main  
+```
