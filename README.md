@@ -36,7 +36,7 @@ Make sure the binary files of `python` and `pip` are inside the workspace:
 /home/user/exercism/.venv/bin/pip
 ```
 
-At last, install `pytest` packages
+At last, install `pytest` package:
 
 ```bash
 pip install pytest
