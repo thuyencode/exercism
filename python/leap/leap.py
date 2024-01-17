@@ -2,6 +2,7 @@
 Python Exercism: Leap
 """
 
+
 def leap_year(year: int) -> bool:
     """
     Determine whether a given year is a leap year.
