@@ -5,7 +5,6 @@
     }
   ],
   "settings": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "prettier.semi": false,
     "prettier.singleQuote": true,
@@ -27,7 +26,9 @@
       "exercism.exercism-cli",
       "dbaeumer.vscode-eslint",
       "ms-python.python",
-      "littlefoxteam.vscode-python-test-adapter"
+      "littlefoxteam.vscode-python-test-adapter",
+      "ms-python.pylint",
+      "kevinrose.vsc-python-indent"
     ]
   }
 }
