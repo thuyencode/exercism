@@ -9,15 +9,11 @@
     "prettier.semi": false,
     "prettier.singleQuote": true,
     "prettier.trailingComma": "none",
-    "python.testing.unittestArgs": [
-      "-v",
-      "-s",
-      "./javascript",
-      "-p",
-      "*_test.py"
+    "python.testing.pytestArgs": [
+      "python"
     ],
-    "python.testing.pytestEnabled": false,
-    "python.testing.unittestEnabled": true
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
   },
   "extensions": {
     "recommendations": [
