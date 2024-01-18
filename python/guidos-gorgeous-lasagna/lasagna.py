@@ -11,7 +11,8 @@ of a module and its functions and/or classes.
 EXPECTED_BAKE_TIME = 40
 PREPARATION_TIME = 2
 
-#DONE: Remove 'pass' and complete the 'bake_time_remaining()' function below.
+
+# DONE: Remove 'pass' and complete the 'bake_time_remaining()' function below.
 def bake_time_remaining(elapsed_bake_time: int):
     """Calculate the bake time remaining.
 
@@ -26,14 +27,13 @@ def bake_time_remaining(elapsed_bake_time: int):
     return EXPECTED_BAKE_TIME - elapsed_bake_time
 
 
-#DONE: Define the 'preparation_time_in_minutes()' function below.
+# DONE: Define the 'preparation_time_in_minutes()' function below.
 def preparation_time_in_minutes(layers: int):
-    """You might also consider using 'PREPARATION_TIME' here, if you have it defined.
-    """
+    """You might also consider using 'PREPARATION_TIME' here, if you have it defined."""
     return PREPARATION_TIME * layers
 
 
-#DONE: define the 'elapsed_time_in_minutes()' function below.
+# DONE: define the 'elapsed_time_in_minutes()' function below.
 # Remember to add a docstring (you can copy and then alter the one from bake_time_remaining.)
 def elapsed_time_in_minutes(number_of_layers: int, elapsed_bake_time: int):
     """Calculate the elapsed cooking time.
@@ -47,4 +47,4 @@ def elapsed_time_in_minutes(number_of_layers: int, elapsed_bake_time: int):
     lasagna.
     """
 
-    return PREPARATION_TIME * number_of_layers + elapsed_bake_time
+    return preparation_time_in_minutes(number_of_layers) + elapsed_bake_time
