@@ -3,6 +3,19 @@
 // convenience to get you started writing code faster.
 //
 
-export const transform = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+/**
+ *
+ * @param {Record<number, string[]>} scoresTable
+ * @returns {Record<string, number>}
+ */
+export const transform = (scoresTable) => {
+  const oneToOneScoresTable = {}
+
+  for (const key in scoresTable) {
+    scoresTable[key].forEach((letter) => {
+      oneToOneScoresTable[letter.toLowerCase()] = Number(key)
+    })
+  }
+
+  return oneToOneScoresTable
+}
