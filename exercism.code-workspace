@@ -32,7 +32,9 @@
       "ms-python.pylint",
       "kevinrose.vsc-python-indent",
       "ms-python.black-formatter",
-      "ms-python.python"
+      "ms-python.python",
+      "angablue.asm-formatter",
+      "kdarkhan.mips"
     ]
   }
 }
