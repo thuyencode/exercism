@@ -18,7 +18,7 @@ export const compute = (dna1, dna2) => {
   return dna1
     .split('')
     .reduce(
-      (acc, letter, index) => (letter === dna2.charAt(index) ? acc : ++acc),
+      (acc, letter, index) => Number(letter !== dna2.charAt(index)) + acc,
       0
     )
 }
