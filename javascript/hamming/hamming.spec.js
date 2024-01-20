@@ -1,47 +1,47 @@
-import { compute } from './hamming';
+import { compute } from './hamming'
 
 describe('Hamming', () => {
   test('empty strands', () => {
-    expect(compute('', '')).toEqual(0);
-  });
+    expect(compute('', '')).toEqual(0)
+  })
 
-  xtest('single letter identical strands', () => {
-    expect(compute('A', 'A')).toEqual(0);
-  });
+  test('single letter identical strands', () => {
+    expect(compute('A', 'A')).toEqual(0)
+  })
 
-  xtest('single letter different strands', () => {
-    expect(compute('G', 'T')).toEqual(1);
-  });
+  test('single letter different strands', () => {
+    expect(compute('G', 'T')).toEqual(1)
+  })
 
-  xtest('long identical strands', () => {
-    expect(compute('GGACTGAAATCTG', 'GGACTGAAATCTG')).toEqual(0);
-  });
+  test('long identical strands', () => {
+    expect(compute('GGACTGAAATCTG', 'GGACTGAAATCTG')).toEqual(0)
+  })
 
-  xtest('long different strands', () => {
-    expect(compute('GGACGGATTCTG', 'AGGACGGATTCT')).toEqual(9);
-  });
+  test('long different strands', () => {
+    expect(compute('GGACGGATTCTG', 'AGGACGGATTCT')).toEqual(9)
+  })
 
-  xtest('disallow first strand longer', () => {
+  test('disallow first strand longer', () => {
     expect(() => compute('AATG', 'AAA')).toThrow(
-      new Error('strands must be of equal length'),
-    );
-  });
+      new Error('strands must be of equal length')
+    )
+  })
 
-  xtest('disallow second strand longer', () => {
+  test('disallow second strand longer', () => {
     expect(() => compute('ATA', 'AGTG')).toThrow(
-      new Error('strands must be of equal length'),
-    );
-  });
+      new Error('strands must be of equal length')
+    )
+  })
 
-  xtest('disallow empty first strand', () => {
+  test('disallow empty first strand', () => {
     expect(() => compute('', 'G')).toThrow(
-      new Error('strands must be of equal length'),
-    );
-  });
+      new Error('strands must be of equal length')
+    )
+  })
 
-  xtest('disallow empty second strand', () => {
+  test('disallow empty second strand', () => {
     expect(() => compute('G', '')).toThrow(
-      new Error('strands must be of equal length'),
-    );
-  });
-});
+      new Error('strands must be of equal length')
+    )
+  })
+})

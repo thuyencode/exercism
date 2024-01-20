@@ -3,6 +3,22 @@
 // convenience to get you started writing code faster.
 //
 
-export const compute = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+/**
+ * Calculate the Hamming Distance between two DNA strands.
+ *
+ * @param {string} dna1
+ * @param {string} dna2
+ * @returns {number} the Hamming Distance
+ */
+export const compute = (dna1, dna2) => {
+  if (dna1.length !== dna2.length) {
+    throw new Error('strands must be of equal length')
+  }
+
+  return dna1
+    .split('')
+    .reduce(
+      (acc, letter, index) => (letter === dna2.charAt(index) ? acc : ++acc),
+      0
+    )
+}
