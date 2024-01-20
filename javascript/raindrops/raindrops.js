@@ -3,6 +3,25 @@
 // convenience to get you started writing code faster.
 //
 
-export const convert = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+/**
+ * Convert a number into a string that contains raindrop sounds corresponding to certain potential factors.
+ *
+ * @param {number} num
+ */
+export const convert = (num) => {
+  if (num <= 1) return String(num)
+
+  const raindrops = Object.keys(RAINDROPS).reduce(
+    (acc, factor) =>
+      num % Number(factor) === 0 ? acc + RAINDROPS[factor] : acc,
+    ''
+  )
+
+  return raindrops.length !== 0 ? raindrops : String(num)
+}
+
+const RAINDROPS = {
+  3: 'Pling',
+  5: 'Plang',
+  7: 'Plong'
+}
