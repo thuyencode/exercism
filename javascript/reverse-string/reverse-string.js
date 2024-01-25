@@ -10,5 +10,11 @@
  * @returns {string}
  */
 export const reverseString = (str) => {
-  return str.split('').reverse().join('')
+  let newStr = ''
+
+  for (const c of str) {
+    newStr = c + newStr
+  }
+
+  return newStr
 }
