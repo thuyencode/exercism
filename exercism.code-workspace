@@ -9,7 +9,9 @@
     "prettier.semi": false,
     "prettier.singleQuote": true,
     "prettier.trailingComma": "none",
-    "python.testing.pytestArgs": ["python"],
+    "python.testing.pytestArgs": [
+      "python"
+    ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
     "[javascript]": {
@@ -27,14 +29,13 @@
       "esbenp.prettier-vscode",
       "sonarsource.sonarlint-vscode",
       "exercism.exercism-cli",
-      "dbaeumer.vscode-eslint",
       "littlefoxteam.vscode-python-test-adapter",
       "ms-python.pylint",
       "kevinrose.vsc-python-indent",
       "ms-python.black-formatter",
       "ms-python.python",
-      "angablue.asm-formatter",
-      "kdarkhan.mips"
+      "kdarkhan.mips",
+      "llvm-vs-code-extensions.vscode-clangd"
     ]
   }
 }
