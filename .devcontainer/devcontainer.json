@@ -8,6 +8,7 @@
 		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/devcontainers-contrib/features/exercism-cli:1": {}
 	},
+	"onCreateCommand": "apt update ; apt full-upgrade -y",
 	"postCreateCommand": "bash scripts/install-dependencies.sh"
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
