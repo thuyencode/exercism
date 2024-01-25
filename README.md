@@ -6,6 +6,8 @@ This repo contains all of my solutions for exercises on Exercism
 
 ## How to run unit tests for Python exercises
 
+[**More detailed information here.**](https://exercism.org/docs/tracks/cpp/tests) My instructions is specify for Arch-based distros only.
+
 First create a new Python environment at the top of the project:
 
 ```bash
