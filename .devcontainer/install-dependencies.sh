@@ -15,3 +15,5 @@ sudo apt install python3-pytest cmake make leiningen clangd-16 nodejs -y
 sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-16 100
 curl -fsSL https://bun.sh/install | bash
 source /home/vscode/.bashrc
+
+echo "Remember to run 'gh auth login' to work with Git and Github. More info: https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git."
