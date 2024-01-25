@@ -106,9 +106,34 @@ Note: _`leiningen` is already installed in the container so you don't need to in
 
 ### Run unit tests for C++ exercises
 
-[**Follow this instrutions.**](#how-to-run-unit-tests-for-c-exercises)
-
 Note: _`cmake` and `make` is already installed in the container so you don't need to install them._
+
+You can use the built in helper script `cpp_test_runner.sh` or [Follow this instrutions](#how-to-run-unit-tests-for-c-exercises).
+
+For example I have the exercise named **Hello World**. Let's run the unit tests with `cpp_test_runner.sh`:
+
+```bash
+vscode ➜ /workspaces/exercism (main) $ cd cpp/hello-world/
+vscode ➜ /workspaces/exercism/cpp/hello-world (main) $ cpp_test_runner.sh
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspaces/exercism/cpp/hello-world/build
+[ 25%] Building CXX object CMakeFiles/hello-world.dir/hello_world_test.cpp.o
+[ 50%] Building CXX object CMakeFiles/hello-world.dir/hello_world.cpp.o
+[ 75%] Building CXX object CMakeFiles/hello-world.dir/test/tests-main.cpp.o
+[100%] Linking CXX executable hello-world
+[100%] Built target hello-world
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+[100%] Built target test_hello-world
+```
 
 ## Getting started without Dev Containers
 
