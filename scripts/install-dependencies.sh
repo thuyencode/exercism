@@ -16,4 +16,8 @@ sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-16 100
 curl -fsSL https://bun.sh/install | bash
 source /home/vscode/.bashrc
 
+sudo cp $(pwd)/scripts/cpp_test_runner.sh /usr/bin
+sudo chmod +x /usr/bin/cpp_test_runner.sh
+
+
 echo "Remember to run 'gh auth login' to work with Git and Github. More info: https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git."

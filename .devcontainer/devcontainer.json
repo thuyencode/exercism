@@ -8,7 +8,7 @@
 		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/devcontainers-contrib/features/exercism-cli:1": {}
 	},
-	"postCreateCommand": "bash .devcontainer/install-dependencies.sh"
+	"postCreateCommand": "bash scripts/install-dependencies.sh"
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
