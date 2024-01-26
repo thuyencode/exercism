@@ -1,2 +1,3 @@
 proc reverse*(s: string): string =
-  discard
+  for c in s:
+    result = c & result
