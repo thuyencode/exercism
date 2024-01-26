@@ -3,7 +3,7 @@ FROM archlinux:base-devel
 
 ARG USERNAME="archlinux"
 
-RUN pacman -Syyu --noconfirm git vim fish starship \
+RUN pacman -Syyu --noconfirm git vim fish starship openssh unzip github-cli python-pytest leiningen clang nodejs nim \
   && useradd -m -g users -g wheel ${USERNAME} \
   && echo "ALL ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USERNAME} \
   && chsh --shell /bin/fish ${USERNAME}
@@ -15,6 +15,9 @@ RUN git clone https://aur.archlinux.org/paru-bin.git /tmp/paru \
   && cd /tmp/paru \
   && makepkg -si --noconfirm \
   && rm -rf /tmp/paru
+
+# Install exercism-cli and bun
+RUN paru -S --noconfirm exercism-bin bun-bin
 
 # Configure Fish and Starship
 RUN mkdir -p ~/.config/fish/conf.d \
