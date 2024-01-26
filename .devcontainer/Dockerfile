@@ -3,7 +3,7 @@ FROM archlinux:base-devel
 
 ARG USERNAME="archlinux"
 
-RUN pacman -Syyu --noconfirm git vim fish starship openssh unzip github-cli python-pytest leiningen clang nodejs nim \
+RUN pacman -Syyu --noconfirm cmake git vim fish starship openssh unzip github-cli python-pytest leiningen clang nodejs nim \
   && useradd -m -g users -g wheel ${USERNAME} \
   && echo "ALL ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USERNAME} \
   && chsh --shell /bin/fish ${USERNAME}
