@@ -1,5 +1,11 @@
 #!/bin/bash
 
+paru -Syu --noconfirm
+# base-devel and git are already included
+paru -S --noconfirm unzip github-cli python-pytest leiningen clang nodejs nim
+
+paru -S --noconfirm exercism-bin
+
 # Get your API key at: https://exercism.org/settings/api_cli
 read -p "Enter your Exercism's API key: " api_key
 
@@ -10,11 +16,8 @@ else
   echo "You need to get the API key at https://exercism.org/settings/api_cli to use the exercism CLI!"
 fi
 
-sudo apt install python3-pytest cmake make leiningen clangd-16 nodejs nim -y
-sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-16 100
-
 curl -fsSL https://bun.sh/install | bash
-source /home/vscode/.bashrc
+source ~/.config/fish/config.fish
 
 sudo cp $(pwd)/scripts/cpp_test_runner.sh /usr/bin
 sudo chmod +x /usr/bin/cpp_test_runner.sh
