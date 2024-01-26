@@ -4,9 +4,9 @@
 read -p "Enter your Exercism's API key: " api_key
 
 if [ -n "$api_key" ]; then
-  exercism configure --token=$api_key -w /workspaces/exercism
+  exercism configure --token=$api_key --workspace=/workspaces/exercism/
 else
-  exercism configure -w /workspaces/exercism
+  exercism configure --workspace=/workspaces/exercism/
   echo "You need to get the API key at https://exercism.org/settings/api_cli to use the exercism CLI!"
 fi
 
