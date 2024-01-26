@@ -17,7 +17,6 @@ else
 fi
 
 curl -fsSL https://bun.sh/install | bash
-source ~/.config/fish/config.fish
 
 sudo cp $(pwd)/scripts/cpp_test_runner.sh /usr/bin
 sudo chmod +x /usr/bin/cpp_test_runner.sh
