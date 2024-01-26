@@ -2,7 +2,7 @@
 
 paru -Syu --noconfirm
 # base-devel and git are already included
-paru -S --noconfirm unzip github-cli python-pytest leiningen clang nodejs nim
+paru -S --noconfirm openssh unzip github-cli python-pytest leiningen clang nodejs nim
 
 paru -S --noconfirm exercism-bin
 
