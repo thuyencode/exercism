@@ -9,9 +9,7 @@
     "prettier.semi": false,
     "prettier.singleQuote": true,
     "prettier.trailingComma": "none",
-    "python.testing.pytestArgs": [
-      "python"
-    ],
+    "python.testing.pytestArgs": ["python"],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
     "[javascript]": {
