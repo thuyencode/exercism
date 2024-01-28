@@ -3,6 +3,26 @@
 // convenience to get you started writing code faster.
 //
 
+/**
+ *
+ * @param {string} strand DNA sequence
+ */
 export function countNucleotides(strand) {
-  throw new Error('Remove this statement and implement this function');
+  const regex = /[^ACGT]/
+  const nucleotide_count = {
+    A: 0,
+    C: 0,
+    G: 0,
+    T: 0
+  }
+
+  if (regex.test(strand)) {
+    throw new Error('Invalid nucleotide in strand')
+  }
+
+  strand.split('').forEach((nucleotide) => {
+    nucleotide_count[nucleotide]++
+  })
+
+  return Object.values(nucleotide_count).join(' ')
 }
