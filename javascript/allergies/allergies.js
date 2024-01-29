@@ -2,6 +2,7 @@
 // This is only a SKELETON file for the 'Allergies' exercise. It's been provided as a
 // convenience to get you started writing code faster.
 //
+// Thanks to: https://exercism.org/tracks/javascript/exercises/allergies/solutions/slaymance
 
 export class Allergies {
   /**
