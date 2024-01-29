@@ -7,6 +7,7 @@
  * Compute the Scrabble score for `word`.
  *
  * @param {string} word
+ * @return The Scrabble score of`word`.
  */
 export const score = (word) => {
   word = word.toUpperCase()
