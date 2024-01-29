@@ -13,14 +13,7 @@ export class Allergies {
    * @param {number} score The allergy score
    */
   constructor(score) {
-    for (const allergy of Allergies.allergiesList) {
-      if (score <= 0) break
-      if (score < allergy[0]) continue
-
-      score -= allergy[0]
-
-      this.#list.unshift(allergy[1])
-    }
+    this.#list = Allergies.allergiesList.filter((_, i) => (score >> i) & 1)
   }
 
   /**
@@ -36,25 +29,19 @@ export class Allergies {
    * @param {string} item
    */
   allergicTo(item) {
-    for (const allergen of this.#list) {
-      if (item === allergen) return true
-    }
-
-    return false
+    return this.#list.includes(item)
   }
 
   static get allergiesList() {
-    return Object.freeze(
-      new Map([
-        [128, 'cats'],
-        [64, 'pollen'],
-        [32, 'chocolate'],
-        [16, 'tomatoes'],
-        [8, 'strawberries'],
-        [4, 'shellfish'],
-        [2, 'peanuts'],
-        [1, 'eggs']
-      ])
-    )
+    return Object.freeze([
+      'eggs',
+      'peanuts',
+      'shellfish',
+      'strawberries',
+      'tomatoes',
+      'chocolate',
+      'pollen',
+      'cats'
+    ])
   }
 }
