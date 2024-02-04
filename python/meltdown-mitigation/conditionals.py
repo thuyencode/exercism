@@ -1,7 +1,9 @@
 """Functions to prevent a nuclear meltdown."""
 
 
-def is_criticality_balanced(temperature, neutrons_emitted):
+def is_criticality_balanced(
+    temperature: int | float, neutrons_emitted: int | float
+) -> bool:
     """Verify criticality is balanced.
 
     :param temperature: int or float - temperature value in kelvin.
@@ -14,10 +16,16 @@ def is_criticality_balanced(temperature, neutrons_emitted):
     - The product of temperature and neutrons emitted per second is less than 500000.
     """
 
-    pass
+    return (
+        temperature < 800
+        and neutrons_emitted > 500
+        and (temperature * neutrons_emitted < 500000)
+    )
 
 
-def reactor_efficiency(voltage, current, theoretical_max_power):
+def reactor_efficiency(
+    voltage: int | float, current: int | float, theoretical_max_power: int | float
+) -> str:
     """Assess reactor efficiency zone.
 
     :param voltage: int or float - voltage value.
@@ -37,10 +45,26 @@ def reactor_efficiency(voltage, current, theoretical_max_power):
     where generated power = voltage * current
     """
 
-    pass
+    generated_power = voltage * current
+    percentage = (generated_power / theoretical_max_power) * 100
+
+    if percentage < 30:
+        return "black"
+
+    if percentage >= 30 and percentage < 60:
+        return "red"
+
+    if percentage >= 60 and percentage < 80:
+        return "orange"
+
+    return "green"
 
 
-def fail_safe(temperature, neutrons_produced_per_second, threshold):
+def fail_safe(
+    temperature: int | float,
+    neutrons_produced_per_second: int | float,
+    threshold: int | float,
+) -> str:
     """Assess and return status code for the reactor.
 
     :param temperature: int or float - value of the temperature in kelvin.
@@ -53,4 +77,13 @@ def fail_safe(temperature, neutrons_produced_per_second, threshold):
     3. 'DANGER' -> `temperature * neutrons per second` is not in the above-stated ranges
     """
 
-    pass
+    n = temperature * neutrons_produced_per_second
+    percentage = (n / threshold) * 100
+
+    if percentage < 90:
+        return "LOW"
+
+    if percentage >= 90 and percentage <= 110:
+        return "NORMAL"
+
+    return "DANGER"
