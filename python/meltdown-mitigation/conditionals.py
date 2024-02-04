@@ -51,10 +51,10 @@ def reactor_efficiency(
     if percentage < 30:
         return "black"
 
-    if percentage >= 30 and percentage < 60:
+    if 30 <= percentage < 60:
         return "red"
 
-    if percentage >= 60 and percentage < 80:
+    if 60 <= percentage < 80:
         return "orange"
 
     return "green"
@@ -77,13 +77,13 @@ def fail_safe(
     3. 'DANGER' -> `temperature * neutrons per second` is not in the above-stated ranges
     """
 
-    n = temperature * neutrons_produced_per_second
-    percentage = (n / threshold) * 100
+    temp = temperature * neutrons_produced_per_second
+    percentage = (temp / threshold) * 100
 
     if percentage < 90:
         return "LOW"
 
-    if percentage >= 90 and percentage <= 110:
+    if 90 <= percentage <= 110:
         return "NORMAL"
 
     return "DANGER"
