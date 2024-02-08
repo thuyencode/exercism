@@ -10,7 +10,10 @@ else
   echo "You need to get the API key at https://exercism.org/settings/api_cli to use the exercism CLI!"
 fi
 
-sudo cp $(pwd)/scripts/cpp_test_runner.sh /usr/bin
-sudo chmod +x /usr/bin/cpp_test_runner.sh
+sudo cp $(pwd)/scripts/cpp_test_runner /usr/bin
+sudo cp $(pwd)/scripts/c_test_runner /usr/bin
+
+sudo chmod +x /usr/bin/cpp_test_runner
+sudo chmod +x /usr/bin/c_test_runner
 
 echo "Remember to run 'gh auth login' to work with Git and Github. More info: https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git."
