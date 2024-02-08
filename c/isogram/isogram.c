@@ -1,23 +1,25 @@
+#include <stddef.h>
+#include <ctype.h>
 #include "isogram.h"
-#include <string.h>
+// Thanks to: https://exercism.org/tracks/c/exercises/isogram/solutions/anguish
 
 bool is_isogram(const char phrase[])
 {
-  const int length = strlen(phrase);
+  if (!phrase)
+    return false;
 
-  for (int i = 0; i < length; i++)
+  bool seen['z' - 'a' + 1] = {false};
+  size_t i = 0;
+  char c;
+
+  while ((c = tolower(phrase[i++])))
   {
-    const char temp = phrase[i];
-
-    for (int j = 0; j < length; j++)
+    if (isalpha(c))
     {
-      if (j == i)
-        continue;
-
-      if (phrase[j] == temp)
-      {
+      if (seen[c - 'a'])
         return false;
-      }
+
+      seen[c - 'a'] = true;
     }
   }
 
