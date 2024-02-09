@@ -25,7 +25,6 @@
     "files.associations": {
       "difference_of_squares.h": "c",
       "square_root.h": "c",
-      "unity.h": "c",
       "grade_school.h": "c"
     }
   },
