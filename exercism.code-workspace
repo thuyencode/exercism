@@ -21,7 +21,10 @@
     "[python]": {
       "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "remote.autoForwardPortsFallback": 0
+    "remote.autoForwardPortsFallback": 0,
+    "files.associations": {
+      "difference_of_squares.h": "c"
+    }
   },
   "extensions": {
     "recommendations": [
