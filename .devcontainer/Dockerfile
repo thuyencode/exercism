@@ -15,6 +15,7 @@ RUN pacman -Syyu --noconfirm python-pytest
 RUN pacman -Syyu --noconfirm leiningen
 RUN pacman -Syyu --noconfirm nodejs
 RUN pacman -Syyu --noconfirm nim
+RUN pacman -Syyu --noconfirm rustup
 
 RUN useradd -m -g users -g wheel ${USERNAME} \
   && echo "ALL ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USERNAME} \
@@ -40,5 +41,7 @@ RUN mkdir -p ~/.config/fish/conf.d \
   && echo "starship init fish | source" >> ~/.config/fish/conf.d/starship.fish \
   && starship preset no-nerd-font > ~/.config/starship.toml \
   && printf "\n[container]\ndisabled = true" >> ~/.config/starship.toml
+
+RUN rustup default stable
 
 CMD [ "fish" ]
