@@ -3,10 +3,12 @@
 
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 
 typedef int list_element_t;
 
-typedef struct {
+typedef struct
+{
    size_t length;
    list_element_t elements[];
 } list_t;
