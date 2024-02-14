@@ -12,6 +12,10 @@
     "python.testing.pytestArgs": ["python"],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
+    "rust-analyzer.linkedProjects": [
+      "rust/hello-world/Cargo.toml",
+      "rust/reverse-string/Cargo.toml"
+    ],
     "[javascript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -37,7 +41,7 @@
       "ms-vscode-remote.remote-containers",
       "nimlang.nimlang",
       "ms-vscode.cpptools",
-      "dustypomerleau.rust-syntax"
+      "1yib.rust-bundle"
     ]
   }
 }
