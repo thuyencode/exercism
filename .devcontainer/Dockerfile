@@ -16,6 +16,7 @@ RUN pacman -Syyu --noconfirm leiningen
 RUN pacman -Syyu --noconfirm nodejs
 RUN pacman -Syyu --noconfirm nim
 RUN pacman -Syyu --noconfirm rustup
+RUN pacman -Syyu --noconfirm fisher
 
 RUN useradd -m -g users -g wheel ${USERNAME} \
   && echo "ALL ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USERNAME} \
@@ -43,5 +44,8 @@ RUN mkdir -p ~/.config/fish/conf.d \
   && printf "\n[container]\ndisabled = true" >> ~/.config/starship.toml
 
 RUN rustup default stable
+
+# Rust/Cargo configuration for Fish
+RUN fish -c "fisher install halostatue/fish-rust"
 
 CMD [ "fish" ]
