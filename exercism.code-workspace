@@ -36,7 +36,8 @@
       "kdarkhan.mips",
       "ms-vscode-remote.remote-containers",
       "nimlang.nimlang",
-      "ms-vscode.cpptools"
+      "ms-vscode.cpptools",
+      "dustypomerleau.rust-syntax"
     ]
   }
 }
