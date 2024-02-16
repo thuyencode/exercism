@@ -19,7 +19,8 @@
       "rust/armstrong-numbers/Cargo.toml",
       "rust/clock/Cargo.toml",
       "rust/anagram/Cargo.toml",
-      "rust/space-age/Cargo.toml"
+      "rust/space-age/Cargo.toml",
+      "rust/difference-of-squares/Cargo.toml"
     ],
     "[javascript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
