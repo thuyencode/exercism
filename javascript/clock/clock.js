@@ -27,11 +27,11 @@ export class Clock {
   }
 
   convert() {
-    this.#hours += Math.floor(this.#minutes / 60)
-    this.#hours =
-      this.#hours % 24 < 0 ? 24 + (this.#hours % 24) : this.#hours % 24
-    this.#minutes =
-      this.#minutes % 60 < 0 ? 60 + (this.#minutes % 60) : this.#minutes % 60
+    let hours = (Math.floor(this.#minutes / 60) + this.#hours) % 24
+    this.#hours = hours < 0 ? 24 + hours : hours
+
+    let minutes = this.#minutes % 60
+    this.#minutes = minutes < 0 ? 60 + minutes : minutes
   }
 
   toString() {
