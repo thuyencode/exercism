@@ -16,7 +16,8 @@
       "rust/hello-world/Cargo.toml",
       "rust/reverse-string/Cargo.toml",
       "rust/gigasecond/Cargo.toml",
-      "rust/armstrong-numbers/Cargo.toml"
+      "rust/armstrong-numbers/Cargo.toml",
+      "rust/clock/Cargo.toml"
     ],
     "[javascript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
