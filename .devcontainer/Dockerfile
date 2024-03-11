@@ -3,20 +3,22 @@ FROM archlinux:base-devel
 
 ARG USERNAME="archlinux"
 
-RUN pacman -Syyu --noconfirm cmake
-RUN pacman -Syyu --noconfirm git
-RUN pacman -Syyu --noconfirm vim
-RUN pacman -Syyu --noconfirm fish
-RUN pacman -Syyu --noconfirm starship
-RUN pacman -Syyu --noconfirm openssh
-RUN pacman -Syyu --noconfirm unzip
-RUN pacman -Syyu --noconfirm github-cli
-RUN pacman -Syyu --noconfirm python-pytest
-RUN pacman -Syyu --noconfirm leiningen
-RUN pacman -Syyu --noconfirm nodejs
-RUN pacman -Syyu --noconfirm nim
-RUN pacman -Syyu --noconfirm rustup
-RUN pacman -Syyu --noconfirm fisher
+RUN pacman -Syu
+RUN pacman -S --noconfirm cmake
+RUN pacman -S --noconfirm git
+RUN pacman -S --noconfirm vim
+RUN pacman -S --noconfirm fish
+RUN pacman -S --noconfirm starship
+RUN pacman -S --noconfirm openssh
+RUN pacman -S --noconfirm unzip
+RUN pacman -S --noconfirm github-cli
+RUN pacman -S --noconfirm python-pytest
+RUN pacman -S --noconfirm leiningen
+RUN pacman -S --noconfirm nodejs
+RUN pacman -S --noconfirm nim
+RUN pacman -S --noconfirm rustup
+RUN pacman -S --noconfirm fisher
+RUN pacman -S --noconfirm bats
 
 RUN useradd -m -g users -g wheel ${USERNAME} \
   && echo "ALL ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USERNAME} \
