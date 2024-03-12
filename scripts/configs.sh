@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get your API key at: https://exercism.org/settings/api_cli
-read -p "Enter your Exercism's API key: " api_key
+read -p "Enter your Exercism's API key (Get it from: https://exercism.org/settings/api_cli): " api_key
 
 if [ -n "$api_key" ]; then
   exercism configure --token=$api_key --workspace=/workspaces/exercism/

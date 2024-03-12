@@ -3,7 +3,7 @@ FROM archlinux:base-devel
 
 ARG USERNAME="archlinux"
 
-RUN pacman -Syu
+RUN pacman -Sy
 RUN pacman -S --noconfirm cmake
 RUN pacman -S --noconfirm git
 RUN pacman -S --noconfirm vim
