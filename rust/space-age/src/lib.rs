@@ -1,93 +1,38 @@
 // The code below is a stub. Just enough to satisfy the compiler.
 // In order to pass the tests you can add-to or change any of this code.
-// Based on my solution at the JavaScript track: https://exercism.org/tracks/javascript/exercises/space-age/solutions/thuyencode
+// Replace my old solution with a superior one from: https://exercism.org/tracks/rust/exercises/space-age/solutions/tokenrove
 
-const A_YEAR_ON_EARTH: f64 = 31557600.0;
-
-#[derive(Debug)]
-pub struct Duration {
-    seconds: u64,
-}
+pub struct Duration(f64);
 
 impl From<u64> for Duration {
     fn from(s: u64) -> Self {
-        Self { seconds: s }
+        Duration((s as f64) / 31557600_f64)
     }
 }
 
 pub trait Planet {
+    fn period() -> f64;
     fn years_during(d: &Duration) -> f64 {
-        todo!("convert a duration ({d:?}) to the number of years on this planet for that duration");
+        d.0 / Self::period()
     }
 }
 
-pub struct Mercury;
-pub struct Venus;
-pub struct Earth;
-pub struct Mars;
-pub struct Jupiter;
-pub struct Saturn;
-pub struct Uranus;
-pub struct Neptune;
-
-impl Planet for Mercury {
-    fn years_during(d: &Duration) -> f64 {
-        format!("{:.2}", d.seconds as f64 / (0.2408467 * A_YEAR_ON_EARTH))
-            .parse()
-            .unwrap()
-    }
-}
-impl Planet for Venus {
-    fn years_during(d: &Duration) -> f64 {
-        format!("{:.2}", d.seconds as f64 / (0.61519726 * A_YEAR_ON_EARTH))
-            .parse()
-            .unwrap()
-    }
+macro_rules! planet {
+    ($n:ident, $p:expr) => {
+        pub struct $n;
+        impl Planet for $n {
+            fn period() -> f64 {
+                $p
+            }
+        }
+    };
 }
 
-impl Planet for Earth {
-    fn years_during(d: &Duration) -> f64 {
-        format!("{:.2}", d.seconds as f64 / (1.0 * A_YEAR_ON_EARTH))
-            .parse()
-            .unwrap()
-    }
-}
-
-impl Planet for Mars {
-    fn years_during(d: &Duration) -> f64 {
-        format!("{:.2}", d.seconds as f64 / (1.8808158 * A_YEAR_ON_EARTH))
-            .parse()
-            .unwrap()
-    }
-}
-
-impl Planet for Jupiter {
-    fn years_during(d: &Duration) -> f64 {
-        format!("{:.2}", d.seconds as f64 / (11.862615 * A_YEAR_ON_EARTH))
-            .parse()
-            .unwrap()
-    }
-}
-impl Planet for Saturn {
-    fn years_during(d: &Duration) -> f64 {
-        format!("{:.2}", d.seconds as f64 / (29.447498 * A_YEAR_ON_EARTH))
-            .parse()
-            .unwrap()
-    }
-}
-
-impl Planet for Uranus {
-    fn years_during(d: &Duration) -> f64 {
-        format!("{:.2}", d.seconds as f64 / (84.016846 * A_YEAR_ON_EARTH))
-            .parse()
-            .unwrap()
-    }
-}
-
-impl Planet for Neptune {
-    fn years_during(d: &Duration) -> f64 {
-        format!("{:.2}", d.seconds as f64 / (164.79132 * A_YEAR_ON_EARTH))
-            .parse()
-            .unwrap()
-    }
-}
+planet!(Earth, 1.0);
+planet!(Mercury, 0.2408467);
+planet!(Venus, 0.61519726);
+planet!(Mars, 1.8808158);
+planet!(Jupiter, 11.862615);
+planet!(Saturn, 29.447498);
+planet!(Uranus, 84.016846);
+planet!(Neptune, 164.79132);
