@@ -1,3 +1,6 @@
+// Thanks to: https://exercism.org/tracks/rust/exercises/sublist/solutions/Adeveloper385
+// I learnt a new weird method called `windows` thanks to his solution
+
 #[derive(Debug, PartialEq, Eq)]
 pub enum Comparison {
     Equal,
@@ -6,6 +9,21 @@ pub enum Comparison {
     Unequal,
 }
 
-pub fn sublist<T: PartialEq>(_first_list: &[T], _second_list: &[T]) -> Comparison {
-    todo!("Determine if the first list is equal to, sublist of, superlist of or unequal to the second list.");
+pub fn sublist<T: PartialEq>(first_list: &[T], second_list: &[T]) -> Comparison {
+    let superlist = second_list.is_empty()
+        || first_list
+            .windows(second_list.len())
+            .any(|x| x == second_list);
+
+    let sublist = first_list.is_empty()
+        || second_list
+            .windows(first_list.len())
+            .any(|x| x == first_list);
+
+    match (superlist, sublist) {
+        (true, true) => Comparison::Equal,
+        (true, false) => Comparison::Superlist,
+        (false, true) => Comparison::Sublist,
+        (false, false) => Comparison::Unequal,
+    }
 }

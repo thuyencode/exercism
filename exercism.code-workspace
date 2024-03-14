@@ -20,7 +20,8 @@
       "rust/clock/Cargo.toml",
       "rust/anagram/Cargo.toml",
       "rust/space-age/Cargo.toml",
-      "rust/difference-of-squares/Cargo.toml"
+      "rust/difference-of-squares/Cargo.toml",
+      "rust/sublist/Cargo.toml"
     ],
     "[javascript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
