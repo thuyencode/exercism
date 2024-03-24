@@ -13,12 +13,28 @@
 #   # other functions here
 #   # ...
 #   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+
+main() {
+  if [[ "$#" -ne 2 ]]; then
+    echo "Usage: $0 <string1> <string2>"
+    return 1
+  fi
+
+  if [[ ${#1} -ne ${#2} ]]; then
+    echo "strands must be of equal length"
+    return 1
+  fi
+
+  COUNT=0
+
+  for ((i = 0; i < ${#1}; i++)); do
+    if [[ ${1:i:1} != "${2:i:1}" ]]; then
+      ((COUNT++))
+    fi
+  done
+
+  echo "$COUNT"
+}
+
+# call main with all of the positional arguments
+main "$@"

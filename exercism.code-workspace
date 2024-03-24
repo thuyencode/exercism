@@ -37,7 +37,6 @@
   "extensions": {
     "recommendations": [
       "esbenp.prettier-vscode",
-      "sonarsource.sonarlint-vscode",
       "exercism.exercism-cli",
       "littlefoxteam.vscode-python-test-adapter",
       "ms-python.pylint",
