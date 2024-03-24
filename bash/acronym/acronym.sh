@@ -13,12 +13,20 @@
 #   # other functions here
 #   # ...
 #   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+
+# The solution is from: https://exercism.org/tracks/bash/exercises/acronym/solutions/seancowens13
+
+main() {
+  ACRONYM=""
+  SENTENCE=${1//[^a-zA-Z\']/ }
+  SENTENCE="${SENTENCE^^}"
+
+  for WORD in $SENTENCE; do
+    ACRONYM="$ACRONYM${WORD:0:1}"
+  done
+
+  echo "$ACRONYM"
+}
+
+# call main with all of the positional arguments
+main "$@"
