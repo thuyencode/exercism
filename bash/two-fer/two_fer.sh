@@ -27,5 +27,3 @@ main() {
 
 # call main with all of the positional arguments
 main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
