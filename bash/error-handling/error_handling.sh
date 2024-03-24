@@ -14,11 +14,15 @@
 #   # ...
 #   # ...
 #
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+main() {
+  # your main function code here
+  if [[ "$#" -ne 1 ]]; then
+    echo "Usage: error_handling.sh <person>"
+    return 1
+  fi
+
+  echo "Hello, $1"
+}
+
+# call main with all of the positional arguments
+main "$@"
