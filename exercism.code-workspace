@@ -48,7 +48,12 @@
       "ms-vscode-remote.remote-containers",
       "nimlang.nimlang",
       "ms-vscode.cpptools",
-      "1yib.rust-bundle"
+      "1yib.rust-bundle",
+      "mads-hartmann.bash-ide-vscode",
+      "jeff-hykin.better-shellscript-syntax",
+      "foxundermoon.shell-format",
+      "timonwong.shellcheck",
+      "rpinski.shebang-snippets"
     ]
   }
 }
