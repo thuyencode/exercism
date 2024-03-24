@@ -14,11 +14,18 @@
 #   # ...
 #   # ...
 #
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
+main() {
+  # your main function code here
+  YOU=$1
+
+  if [ -z "$YOU" ]; then
+    YOU="you"
+  fi
+
+  echo "One for ${YOU}, one for me."
+}
+
+# call main with all of the positional arguments
+main "$@"
 #
 # *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
