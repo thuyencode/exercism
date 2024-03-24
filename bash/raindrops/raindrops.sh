@@ -38,10 +38,10 @@ main() {
     fi
   done
 
-  if [[ ${#RAINDROP_SOUNDS} -gt 0 ]]; then
-    echo "$RAINDROP_SOUNDS"
-  else
+  if [[ -z "$RAINDROP_SOUNDS" ]]; then
     echo "$NUMBER"
+  else
+    echo "$RAINDROP_SOUNDS"
   fi
 }
 
