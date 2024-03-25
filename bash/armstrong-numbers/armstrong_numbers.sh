@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Based on my solution at the C track: https://exercism.org/tracks/c/exercises/armstrong-numbers/solutions/thuyencode
+
 # The following comments should help you get started:
 # - Bash is flexible. You may use functions or write a "raw" script.
 #
@@ -16,14 +18,7 @@
 
 main() {
   # your main function code here
-  NUMBER_OF_DIGITS=0
-  TEMP=$1
-
-  while [[ $TEMP -ne 0 ]]; do
-    TEMP=$((TEMP / 10))
-    ((NUMBER_OF_DIGITS++))
-  done
-
+  NUMBER_OF_DIGITS=${#1}
   SUM=0
 
   for ((i = $1; i != 0; i /= 10)); do
@@ -37,11 +32,7 @@ main() {
     SUM=$((SUM + N))
   done
 
-  if [[ $SUM -eq $1 ]]; then
-    echo "true"
-  else
-    echo "false"
-  fi
+  [[ $SUM -eq $1 ]] && echo "true" || echo "false"
 }
 
 # call main with all of the positional arguments
