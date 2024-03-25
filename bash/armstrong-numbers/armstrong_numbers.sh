@@ -13,12 +13,36 @@
 #   # other functions here
 #   # ...
 #   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+
+main() {
+  # your main function code here
+  NUMBER_OF_DIGITS=0
+  TEMP=$1
+
+  while [[ $TEMP -ne 0 ]]; do
+    TEMP=$((TEMP / 10))
+    ((NUMBER_OF_DIGITS++))
+  done
+
+  SUM=0
+
+  for ((i = $1; i != 0; i /= 10)); do
+    NUM=$((i % 10))
+    N=1
+
+    for ((j = 0; j < NUMBER_OF_DIGITS; j++)); do
+      N=$((N * NUM))
+    done
+
+    SUM=$((SUM + N))
+  done
+
+  if [[ $SUM -eq $1 ]]; then
+    echo "true"
+  else
+    echo "false"
+  fi
+}
+
+# call main with all of the positional arguments
+main "$@"
