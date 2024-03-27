@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Based on my solution at the JavaScript track: https://exercism.org/tracks/javascript/exercises/pangram/iterations?idx=3
+
 # The following comments should help you get started:
 # - Bash is flexible. You may use functions or write a "raw" script.
 #
