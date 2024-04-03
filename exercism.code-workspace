@@ -53,7 +53,9 @@
       "foxundermoon.shell-format",
       "timonwong.shellcheck",
       "rpinski.shebang-snippets",
-      "jetmartin.bats"
+      "jetmartin.bats",
+      "codezombiech.gitignore",
+      "vscjava.vscode-java-pack"
     ]
   }
 }
