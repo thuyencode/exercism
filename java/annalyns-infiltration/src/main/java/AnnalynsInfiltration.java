@@ -15,10 +15,6 @@ class AnnalynsInfiltration {
 
     public static boolean canFreePrisoner(boolean knightIsAwake, boolean archerIsAwake, boolean prisonerIsAwake,
             boolean petDogIsPresent) {
-        if (petDogIsPresent) {
-            return !archerIsAwake;
-        }
-
-        return prisonerIsAwake && !knightIsAwake && !archerIsAwake;
+        return (petDogIsPresent && !archerIsAwake) || (prisonerIsAwake && !knightIsAwake && !archerIsAwake);
     }
 }
