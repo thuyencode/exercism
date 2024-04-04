@@ -1,3 +1,5 @@
+// Based on my solution at the JavaScript track: https://exercism.org/tracks/javascript/exercises/lasagna/solutions/thuyencode
+
 public class Lasagna {
     public int expectedMinutesInOven() {
         return 40;
