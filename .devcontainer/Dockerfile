@@ -18,7 +18,7 @@ RUN pacman -S --noconfirm nim
 RUN pacman -S --noconfirm rustup
 RUN pacman -S --noconfirm fisher
 RUN pacman -S --noconfirm bats
-RUN pacman -S --noconfirm jre17-openjdk
+RUN pacman -S --noconfirm jdk17-openjdk
 RUN pacman -S --noconfirm leiningen
 
 RUN useradd -m -g users -g wheel ${USERNAME} && echo "ALL ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/${USERNAME} && chsh --shell /bin/fish ${USERNAME}
