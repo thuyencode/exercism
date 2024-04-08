@@ -28,6 +28,6 @@ class BirdWatcher {
     }
 
     public int getBusyDays() {
-        return Arrays.stream(birdsPerDay).filter(n -> n >= 5).toArray().length;
+        return Arrays.stream(birdsPerDay).filter(n -> n >= 5).count();
     }
 }
