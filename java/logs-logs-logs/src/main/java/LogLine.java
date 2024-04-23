@@ -44,8 +44,4 @@ public class LogLine {
     public String getOutputForShortLog() {
         return String.format("%d:%s", this.logLevel.getEncodedLogLevel(), this.logMessage);
     }
-
-    public static void main(String[] args) {
-        new LogLine("[DBG]: ; expected");
-    }
 }
