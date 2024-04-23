@@ -38,6 +38,6 @@ class GottaSnatchEmAll {
     }
 
     static Set<String> allCards(List<Set<String>> collections) {
-        return new HashSet<>(collections.stream().flatMap(Set::stream).collect(Collectors.toList()));
+        return collections.stream().flatMap(Set::stream).collect(Collectors.toSet());
     }
 }
