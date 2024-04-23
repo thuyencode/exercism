@@ -5,7 +5,6 @@ public class LogLine {
     public LogLine(String logLine) {
         this.logMessage = logLine.substring(logLine.indexOf(':') + 2).strip();
 
-        System.out.println(logLine.substring(logLine.indexOf('[') + 1, logLine.indexOf(']')));
         switch (logLine.substring(logLine.indexOf('[') + 1, logLine.indexOf(']'))) {
             case "TRC":
                 this.logLevel = LogLevel.TRACE;
