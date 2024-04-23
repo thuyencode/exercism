@@ -5,16 +5,21 @@ class CalculatorConundrum {
             throw new IllegalArgumentException("Operation cannot be null");
         }
 
+        int result = 0;
+
         try {
             switch (operation) {
                 case "+":
-                    return String.format("%d %s %d = %d", operand1, operation, operand2, operand1 + operand2);
+                    result = operand1 + operand2;
+                    break;
 
                 case "*":
-                    return String.format("%d %s %d = %d", operand1, operation, operand2, operand1 * operand2);
+                    result = operand1 * operand2;
+                    break;
 
                 case "/":
-                    return String.format("%d %s %d = %d", operand1, operation, operand2, operand1 / operand2);
+                    result = operand1 / operand2;
+                    break;
 
                 case "":
                     throw new IllegalArgumentException("Operation cannot be empty");
@@ -22,8 +27,11 @@ class CalculatorConundrum {
                 default:
                     throw new IllegalOperationException(String.format("Operation '%s' does not exist", operation));
             }
+
+            return String.format("%d %s %d = %d", operand1, operation, operand2, result);
         } catch (ArithmeticException e) {
             throw new IllegalOperationException("Division by zero is not allowed", e);
         }
+
     }
 }
